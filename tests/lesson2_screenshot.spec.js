@@ -1,5 +1,5 @@
 // @ts-check
-const { test, expect } = require('@playwright/test');
+import { test } from '@playwright/test';
 
 test("Make screenshots", async ({ page }) => {
     // Open the test page
@@ -9,6 +9,5 @@ test("Make screenshots", async ({ page }) => {
     await page.locator("body").screenshot({path: "site.png"})
   
     // Screenshot the auth form
-    //await expect(page.locator(".container")).toBeVisible();
     await page.locator(".container").first().screenshot({path: "container.png"})
   });
